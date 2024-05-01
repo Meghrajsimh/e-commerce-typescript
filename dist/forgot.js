@@ -8,7 +8,9 @@ const changePassBtn = document.querySelector("#changeBtn");
 const userEmail = sessionStorage.getItem("forgotPass") || "[]";
 let userIndex;
 //user Email
-loginUser.value = userEmail;
+if (userEmail != '[]') {
+    loginUser.value = userEmail;
+}
 document.querySelector("#verify")?.addEventListener("click", (e) => {
     e.preventDefault();
     //check given email is right or worng
@@ -18,7 +20,7 @@ document.querySelector("#verify")?.addEventListener("click", (e) => {
         changeUser.value = loginUser.value;
     }
     else {
-        alert("email is not");
+        alert("email is not found");
     }
 });
 //change user password

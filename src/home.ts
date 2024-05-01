@@ -48,6 +48,7 @@ if(logoutBtn != null ) {
     logoutBtn.addEventListener("click", () => {
         sessionStorage.removeItem('e-basketUser');
         loginBtn.style.display = "block";
+        alert("yor are logout!!!");
         location.reload();
     });
 }

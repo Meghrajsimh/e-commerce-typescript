@@ -8,6 +8,7 @@ header{
     height: 100px;
     background-color: rgba(211, 242 ,43, 0.476);
     padding: 10px;
+    margin-bottom: 50px;
 }
 h1 {
     margin-top: 10px;
@@ -86,9 +87,9 @@ main {
 
 .searchBar{
     display: inline;
-    position: relative;
-    top: 10px;
-    left: 75em;
+    position: absolute;
+    top: 120px;
+    right: 10px;
 }
 .searchBar input {
     width: 300px;

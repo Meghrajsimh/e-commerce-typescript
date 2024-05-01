@@ -10,7 +10,9 @@ const userEmail: string = sessionStorage.getItem("forgotPass") || "[]";
 let userIndex: number;
 
 //user Email
+if(userEmail != '[]') {
 loginUser.value = userEmail;
+}
 
 document.querySelector("#verify")?.addEventListener("click", (e):void => {
   e.preventDefault();
@@ -22,7 +24,7 @@ document.querySelector("#verify")?.addEventListener("click", (e):void => {
     changePasswordForm.classList.add("block");
     changeUser.value = loginUser.value;
   } else {
-    alert("email is not");
+    alert("email is not found");
   }
 });
 

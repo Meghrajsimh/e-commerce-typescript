@@ -35,19 +35,31 @@ button {
     margin-left: 94px;
 }
 
-.register{
+.registeForm{
     display: none;
 }
-#reg {
-    display: none;
-}
+
 .none {
     display:  none;
 }
 .block {
     display: block;
 }
-
+#submit {
+    position: relative;
+    right: 50px;
+}
+.registe {
+    display: inline;
+    position: absolute;
+    top: 82%;
+    left: 190px;
+    cursor: pointer;
+}
+.registe:hover {
+    color: blue;
+    text-decoration: underline;
+}
 @media (max-width:430px) {
     .login {
         width: 300px;

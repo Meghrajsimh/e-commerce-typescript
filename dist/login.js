@@ -4,25 +4,22 @@ const inputTwo = document.getElementById("inputTwo");
 const btn = document.getElementById("submit");
 const register = document.getElementById("reg");
 const login = document.getElementById('log');
-const registerForm = document.querySelector(".register");
-const loginForm = document.getElementById("login");
+const registerForm = document.querySelector(".registeForm");
+const loginForm = document.querySelector(".loginForm");
 const registeBtn = document.getElementById("rsubmit");
 const rinputOne = document.getElementById("rinputOne");
 const rinputTwo = document.getElementById("rinputTwo");
 const selectProject = document.querySelector('#select');
-btn.addEventListener("click", addData);
-;
-login.addEventListener("click", () => {
+const registerLink = document.querySelector(".registe");
+registerLink.addEventListener('click', () => {
     registerForm.classList.add('block');
     loginForm.classList.add("none");
-    login.style.display = 'none';
-    register.style.display = 'block';
 });
+btn.addEventListener("click", addData);
+;
 register.addEventListener('click', () => {
     registerForm.classList.remove('block');
     loginForm.classList.remove("none");
-    login.style.display = 'block';
-    register.style.display = 'none';
 });
 registeBtn.addEventListener("click", () => {
     let rName = rinputOne.value;

@@ -3,13 +3,19 @@ const inputTwo = document.getElementById("inputTwo") as HTMLInputElement;
 const btn = document.getElementById("submit") as HTMLButtonElement;
 const register = document.getElementById("reg") as HTMLHeadingElement;
 const login = document.getElementById('log') as HTMLHeadElement;
-const registerForm = document.querySelector(".register") as HTMLFormElement;
-const loginForm = document.getElementById("login") as HTMLFormElement;
+const registerForm = document.querySelector(".registeForm") as HTMLFormElement;
+const loginForm = document.querySelector(".loginForm") as HTMLFormElement;
 const registeBtn = document.getElementById("rsubmit") as HTMLButtonElement;
 const rinputOne = document.getElementById("rinputOne") as HTMLInputElement;
 const rinputTwo = document.getElementById("rinputTwo") as HTMLInputElement;
 const selectProject = document.querySelector('#select') as HTMLSelectElement;
+const registerLink = document.querySelector(".registe") as HTMLDivElement;
 
+
+registerLink.addEventListener('click',():void =>{
+  registerForm.classList.add('block');
+  loginForm.classList.add("none");
+});
 
 btn.addEventListener("click", addData);
 interface UserData  {
@@ -17,18 +23,9 @@ interface UserData  {
   pass: string;
 };
 
-login.addEventListener("click",():void =>{
-  registerForm.classList.add('block');
-  loginForm.classList.add("none");
-  login.style.display ='none';
-  register.style.display= 'block';
-});
-
 register.addEventListener('click',()=>{
    registerForm.classList.remove('block');
    loginForm.classList.remove("none");
-   login.style.display = 'block';
-   register.style.display = 'none';
 })
 
  registeBtn.addEventListener("click",():void =>{
