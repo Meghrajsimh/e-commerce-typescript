@@ -25,13 +25,21 @@ registeBtn.addEventListener("click", () => {
     let rName = rinputOne.value;
     let rPass = rinputTwo.value;
     let dataArr = JSON.parse(localStorage.getItem("userReg") || "[]");
-    let obj = {
-        name: rName,
-        pass: rPass
-    };
-    dataArr.push(obj);
-    if (rName.includes('@')) {
-        localStorage.setItem("userReg", JSON.stringify(dataArr));
+    let userFind = dataArr.findIndex((ele) => ele.name == rName);
+    if (userFind == -1) {
+        let obj = {
+            name: rName,
+            pass: rPass
+        };
+        dataArr.push(obj);
+        if (rName.includes('@')) {
+            localStorage.setItem("userReg", JSON.stringify(dataArr));
+        }
+    }
+    else {
+        alert("user already exist");
+        rinputOne.value = '';
+        rinputTwo.value = '';
     }
 });
 function addData(e) {

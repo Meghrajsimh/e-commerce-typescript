@@ -33,7 +33,9 @@ register.addEventListener('click',()=>{
   let rPass =   rinputTwo.value;
 
   let dataArr: {name : string , pass : string}[] = JSON.parse(localStorage.getItem("userReg") || "[]");
-
+  let userFind: number = dataArr.findIndex((ele) => ele.name == rName);
+  
+  if (userFind == -1) {
   let obj :UserData = {
     name : rName,
     pass : rPass
@@ -43,6 +45,11 @@ register.addEventListener('click',()=>{
   if(rName.includes('@')){
   localStorage.setItem("userReg",JSON.stringify(dataArr));
   }
+}else {
+  alert("user already exist");
+  rinputOne.value = '';
+  rinputTwo.value = '';
+}
  
 })
 
